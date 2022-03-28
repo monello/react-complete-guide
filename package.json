@@ -1,0 +1,23 @@
+{
+  "name": "react-complete-guide",
+  "version": "1.0.0",
+  "description": "This is my Code-along for the course: \"React - The Complete Guide\" by Maximilian Schwarzmüller",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monello/react-complete-guide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monello/react-complete-guide/issues"
+  },
+  "homepage": "https://github.com/monello/react-complete-guide#readme",
+  "dependencies": {
+    "typescript": "^4.6.3"
+  }
+}
