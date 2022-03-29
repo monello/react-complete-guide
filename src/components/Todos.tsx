@@ -1,4 +1,7 @@
 import React from "react";
+// Components
+import TodoItem from "./TodoItem";
+// Models
 import Todo from "../models/todo";
 
 // React.FC adds type-safety for React Functional components
@@ -10,7 +13,7 @@ const Todos: React.FC<{ items: Todo[] }> = (props) => {
     return (
         <ul>
             {props.items.map((item) => (
-                <li key={item.id}>{item.text}</li>
+                <TodoItem key={item.id} text={item.text} />
             ))}
         </ul>
     );
