@@ -1,9 +1,19 @@
-import Todos from "./components/Todos";
+import Todos, { TodosAF, TodosTF } from "./components/Todos";
 
 function App() {
     return (
         <div>
-            <Todos />
+            <Todos>
+                <p>Children for React.FC</p>
+            </Todos>
+            <hr />
+            <TodosAF items={[]}>
+                <p>Children for Arrow funcion</p>
+            </TodosAF>
+            <hr />
+            <TodosTF items={[]}>
+                <p>Children for Traditional funcion</p>
+            </TodosTF>
         </div>
     );
 }
