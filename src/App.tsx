@@ -35,11 +35,7 @@ function App() {
             // Concat is a standard JS array-method that combines 2 arrays and returns a brand new array
             // We want to return a new array as we do indeed want to replace the entire old state, but this way we ensure
             //  that we retain the old data and add the new data at the end.
-            // return currentTodos.concat(newTodo);
-
-            // An alternative way to achive the same that you might see in the wild is to use the spread-operator
-            //  and return a a new array like this
-            return [...currentTodos, newTodo];
+            return currentTodos.concat(newTodo);
         });
     };
 
