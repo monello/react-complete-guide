@@ -3,6 +3,8 @@ import React from "react";
 import TodoItem from "./TodoItem";
 // Models
 import Todo from "../models/todo";
+// Styles
+import classes from "./Todos.module.css";
 
 // React.FC adds type-safety for React Functional components
 // This means this function has to return JSX
@@ -11,7 +13,7 @@ import Todo from "../models/todo";
 // - In the same way React.FC can be told what data it can receive, eg. React.FC<{foo: string}>
 const Todos: React.FC<{ items: Todo[] }> = (props) => {
     return (
-        <ul>
+        <ul className={classes.todos}>
             {props.items.map((item) => (
                 <TodoItem key={item.id} text={item.text} />
             ))}

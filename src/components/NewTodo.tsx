@@ -1,5 +1,7 @@
 import { useRef } from "react";
 
+import classes from "./NewTodo.module.css";
+
 // Here we set this component as a React Functional Component using "React.FC"
 // This is a Generic, which means we can describe the function arguments (Types) in angle brackets
 //  - We are stating that we expect an argument (prop) named "onAddTodo"
@@ -44,7 +46,7 @@ const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
     };
 
     return (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className={classes.form}>
             <label htmlFor="text">Todo text</label>
             <input type="text" id="text" ref={todoTextInputRef} />
             <button>Add Todo</button>
