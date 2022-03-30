@@ -1,5 +1,14 @@
 import { useRef } from "react";
 
+// Here we set this component as a React Functional Component using "React.FC"
+// This is a Generic, which means we can describe the function arguments (Types) in angle brackets
+//  - We are stating that we expect an argument (prop) named "onAddTodo"
+//  - We are typing this property as a function that will expect an argument called "text" of type "string"
+//  - We are also stating that this function won't return anything using "=> void".
+//  - This tells typescript to warn us if we accidentally change the function to return something (which it shouldn't)
+// In summary:
+//  - This function will be passed into the NewTodo component as a prop, when we invoke it in the App.tsx
+//  - Just te be clear we are jusr DESCRIBING the shape of the function (type) and not actually creating the function here
 const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
     // here we need to use a Generic to tell useRef the exact type of HTML element we are referencing.
     // This will then allo TS to do the proper type-checking and valid property and method checks when we use the ref on the HTML element (below)
@@ -25,6 +34,13 @@ const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
             // throw an error
             return;
         }
+
+        // As per the type decription in the React.FC generic at the top of this component, we need to pass in
+        //  a string value here.
+        // We pass in the enteredText, and TS will know this is indeed a string, because it knows that values we fetch
+        //  from any HTMLInputElement is always a string... even if you define the input of type number: <input type="number" />
+        // So it all ties up, because we can see that on the line where we use the useRef() hook we state the type as "HTMLInputElement"
+        props.onAddTodo(enteredText);
     };
 
     return (
